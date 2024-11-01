@@ -1,0 +1,35 @@
+INSERT INTO clientes (clienteID, Nome, Celular, Email)
+VALUES 
+(1, 'João Cesar', '21990292817', 'joao.cesar@teste.com'),
+(2, 'Carla Soares', '21998245678', 'carla.soares@teste.com'),
+(3, 'Marcos Magal', '22999884621', 'magal.marcos@teste.com'),
+(4, 'Sandra Fernandez', '11991900103', 'sfernadez10@teste.com'),
+(5, 'Pedro Henrique', '21993945631', 'ph@teste.com'),
+(6, 'Paula Carvalho Silva', '21997562138', 'pcsilva@teste.com');
+
+INSERT INTO Carros (ClienteID, Placa, Modelo, Marca, AnoModelo, ServicoID) 
+VALUES 
+(1, 'sd90x09', '8-160', 'VOLKSWAGEN', 2020, 1),
+(2, 'fj23y77', '3-150', 'FORD', 2019, 2), 
+(3, 'mk56z88', '5-250', 'CHEVROLET', 2021, 3), 
+(4, 'br45k22', '6-170', 'FIAT', 2018, 1), 
+(5, 'cw78m55', '4-180', 'TOYOTA', 2020, 2), 
+(6, 'ht89x66', '7-200', 'HONDA', 2022, 3);  
+
+INSERT INTO servico ( servicoID, NomeServico, ProdutoID)
+VALUES
+(1, 'Troca da junta de cabeçote', 2),
+(2, 'Troca do kit Coroa e pião', 3),
+(3, 'Troca do kit embreagem', 4);
+
+INSERT INTO produtos (ProdutoID, FornecedorID, NomeProduto, MarcaProduto, QtdProduto)
+VALUES
+(1, 1, 'Cilindro de embreagem', 'MarcaA', 10),
+(2, 1, 'Cilindro de freio', 'MarcaB', 20),
+(3, 1, 'Lona de freio', 'Marca A', 10),
+(4, 2, 'Kit de embreagem', 'Marca C', 5);
+
+INSERT INTO Fornecedores (FornecedorID, NomeFornecedores, CelFornecedor, EmailFornecedor)
+VALUES
+(1 , 'Fornecedor01', '2199990000', 'fornum@teste.com'),
+(2 , 'Fornecedor02', '22988897562', 'fornecedois@teste.com');

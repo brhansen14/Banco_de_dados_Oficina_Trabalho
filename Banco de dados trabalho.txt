@@ -1,0 +1,45 @@
+CREATE TABLE Clientes (
+	ClienteID SERIAL NOT NULL,
+	Nome VARCHAR(50) NOT NULL,
+	Celular BIGINT NOT NULL,
+	Email VARCHAR(40) NOT NULL,
+	PRIMARY KEY (ClienteID)
+);
+
+CREATE TABLE Servico (
+	ServicoID SERIAL NOT NULL,
+	NomeServico VARCHAR(40) NOT NULL,
+	PRIMARY KEY (ServicoID),
+	FOREIGN KEY (ProdutoID) REFERENCES Produtos (ProdutoID)
+);
+
+CREATE TABLE Carros (
+	ClienteID INT NOT NULL,
+	Placa VARCHAR(10) NOT NULL,
+	Modelo VARCHAR(40) NOT NULL,
+	Marca VARCHAR(25) NOT NULL,
+	AnoModelo INT,
+	ServicoID INT NOT NULL,
+	PRIMARY KEY (Placa),
+	FOREIGN KEY (ClienteID) REFERENCES Clientes (ClienteID),
+	FOREIGN KEY (ServicoID) REFERENCES Servico (ServicoID)
+);
+
+CREATE TABLE Fornecedores (
+	FornecedorID SERIAL NOT NULL,
+	NomeFornecedores VARCHAR(40) NOT NULL,
+	CelFornecedor INT NOT NULL,
+	EmailFornecedor VARCHAR(40) NOT NULL,
+	PRIMARY KEY (FornecedorID)
+);
+
+CREATE TABLE Produtos (
+	ProdutoID SERIAL NOT NULL,
+	FornecedorID INT NOT NULL,
+	NomeProduto VARCHAR(40),
+	MarcaProduto VARCHAR(40),
+	QtdProduto INT NOT NULL,
+	PRIMARY KEY (ProdutoID),
+	FOREIGN KEY (FornecedorID) REFERENCES Fornecedores (FornecedorID)
+);
+ 
